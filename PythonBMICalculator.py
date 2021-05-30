@@ -36,7 +36,6 @@ while Event == True:
     if event == None:
         Event = False
         break
+#test
 
 #window.close()
-
-
