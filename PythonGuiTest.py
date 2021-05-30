@@ -1,5 +1,5 @@
 # A simple python GUI example code.
-
+# A Nandu Sreevalsan production
 import PySimpleGUI as sg
 
 # Define the window's contents
@@ -21,5 +21,3 @@ else:
 
 
 window.close()
-
-
