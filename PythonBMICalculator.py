@@ -1,4 +1,5 @@
 # A simple python GUI example code.
+# Programmed by Nandu Sreevalsan.
 
 import PySimpleGUI as sg
 import time
@@ -28,7 +29,11 @@ while Event == True:
             BMI = Wt/(Ht*Ht)*10000
             values["BMI"] = str(BMI)
             print(values)
-            window['OUTPUT'].update("BMI is: "+values["BMI"])
+            if(BMI>25):
+                window['OUTPUT'].update("Yo FATSOOOOO, your BMI is: "+values["BMI"])
+            elif(BMI<25):
+                window['OUTPUT'].update("Hmm, your BMI is: "+values["BMI"])
+
         except:
             window['OUTPUT'].update("Please enter the correct values")
     else:
