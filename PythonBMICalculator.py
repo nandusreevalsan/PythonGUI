@@ -41,10 +41,18 @@ while Event == True:
             Wt = float(values['weight'])
             ReqBMI = float(values['ReqBMI'])
             ReqWt = ReqBMI * Ht*Ht/10000
-            Wtloss = Wt - ReqWt
             values["ReqWt"] = str(ReqWt)
-            values["Wtloss"] = str(Wtloss)
-            window['Weight'].update("Req Wt is :"+ values["ReqWt"]+" You have to loose : " + values["Wtloss"])
+            if Wt>ReqWt:
+                Wtloss = Wt - ReqWt
+                values["Wtloss"] = str(Wtloss)
+                window['Weight'].update("Req Wt is :"+ values["ReqWt"]+" You have to loose : " + values["Wtloss"])
+
+            else:
+                Wtloss = ReqWt - Wt
+                values["Wtloss"] = str(Wtloss)
+                window['Weight'].update("Req Wt is :"+ values["ReqWt"]+" You have to gain : " + values["Wtloss"])
+
+
         except:
             window['Weight'].update("Please enter the correct values")
 
@@ -54,6 +62,8 @@ while Event == True:
         Event = False
         break
 
-#test
+#window.close()
+
+
 
 #window.close()
